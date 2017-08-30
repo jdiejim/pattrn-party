@@ -1,9 +1,8 @@
-document.querySelector('.accordion').addEventListener('click', function(e) {
-  // document.querySelectorAll('.card').forEach(e => {
-  //   e.classList.remove('active');
-  // });
-
-  if (e.target.nodeName === 'BUTTON') {
-    e.target.parentNode.classList.toggle('active');
+$('.accordion').on('click', function(e) {
+  if (window.innerWidth > 450) {
+    $('.accordion-card').removeClass('active');
+    return $(e.target).parent().addClass('active');
   }
+
+  $(e.target).parent().toggleClass('active');
 })
