@@ -17,18 +17,21 @@ p {
 
 .header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
-  height: 90px;
+  height: 120px;
+  padding: 10px 0 20px;
   background-color: #2F2235;
+  transition: all 0.2s;
 }
 
 .logo {
-  margin-left: 50px;
   color: #FFF;
-  font-size: 25px;
+  font-size: 40px;
   font-weight: 300;
+  transition: all 0.2s;
 }
 
 .logo span {
@@ -36,20 +39,27 @@ p {
 }
 
 .name {
-  margin-right : 50px;
   color: #FFF;
   font-size: 20px;
+  transition: all 0.2s;
 }
 
 .primary-divider {
-  display: none;
+  display: block;
+  width: 30%;
+  border: 1px solid #3F3244;
 }
 
 .accordion-banner {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin: 50px 0 50px 50px;
+  margin: 50px 0;
+}
+
+.accordion-card {
+  width: 100%;
 }
 
 .accordion-title {
@@ -57,27 +67,24 @@ p {
 }
 
 .secondary-divider {
-  width: 70%;
+  width: 30%;
 }
 
 .accordion {
   position: relative;
   display: flex;
+  flex-direction: column;
   border: 1px solid #D1D2D3;
   width: 90%;
   margin: 10px auto;
 }
 
-.accordion-card {
-  width: 100%;
-}
-
 .tab {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
-  height: 60px;
+  height: 80px;
   background-color: #F2F2F2;
   border: 1px solid #FFF;
   cursor: pointer;
@@ -93,21 +100,29 @@ p {
 
 .tab-title {
   color: #666666;
-  font-size: 20px;
+  margin-left: 20px;
+  font-size: 30px;
   font-weight: 300;
 }
 
 .tab-icon {
-  display: none;
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  background-image: url(./assets/add.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
 }
 
 .accordion-card-body {
   display: none;
 }
 
-.active .tab {
-  background-color: #FFF;
-  border: none;
+.active .accordion-card-body {
+  position: relative;
+  display: block;
 }
 
 .active .tab-icon {
@@ -119,16 +134,9 @@ p {
   font-weight: 600;
 }
 
-.active .accordion-card-body {
-  position: absolute;
-  top: 62px;
-  left: 0;
-  display: flex;
-  background-color: red;
-}
-
-.accordion-img {
-  width: 100px;
+.active .tab {
+  background-color: #FFF;
+  border: none;
 }
 
 .accordion-text {
@@ -137,7 +145,13 @@ p {
 }
 
 .accordion-card-text {
-  margin-top: 20px;
+  margin: 20px 0;
+}
+
+.accordion-img {
+  width: 95%;
+  height: 200px;
+  margin: 10px;
 }
 
 .accordion-divider {
@@ -148,7 +162,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 400px;
+  width: 90%;
   padding: 10px 20px;
   margin: 40px auto;
   background-color: #3F3244;
@@ -167,122 +181,76 @@ p {
   outline: none;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (min-width: 450px) {
   .header {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 120px;
-    padding: 10px 0 20px;
-    transition: all 0.2s;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 90px;
   }
 
   .logo {
-    margin-left: 0px;
-    color: #FFF;
-    font-size: 40px;
-    font-weight: 300;
-    transition: all 0.2s;
-  }
-
-  .logo span {
-    color: #34D1D1;
+    margin-left: 50px;
+    font-size: 25px;
   }
 
   .name {
-    margin: 0;
-    color: #FFF;
-    font-size: 20px;
-    transition: all 0.2s;
+    margin-right: 50px;
   }
 
   .primary-divider {
-    display: block;
-    width: 30%;
-    border: 1px solid #3F3244;
-  }
-
-  .accordion-banner {
-    flex-direction: column;
-    margin: 50px 0;
-  }
-
-  .secondary-divider {
-    width: 30%;
-  }
-
-  .code-link {
-    width: 90%;
-  }
-
-  .accordion {
-    flex-direction: column;
-  }
-
-  .accordion-card {
-    width: 100%;
-  }
-
-  .tab {
-    justify-content: space-between;
-    height: 80px;
-  }
-
-  .tab-title {
-    margin-left: 20px;
-    font-size: 30px;
-  }
-
-  .tab-icon {
-    display: block;
-    width: 30px;
-    height: 30px;
-    margin-right: 20px;
-    background-image: url(./assets/add.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 80%;
-  }
-
-  .accordion-card-body {
     display: none;
   }
 
-  .active .tab {
-    background-color: #FFF;
-    border: none;
+  .accordion-banner {
+    flex-direction: row;
+    margin: 50px 0 50px 50px;
   }
 
-  .active .tab-icon {
-    background-image: url(./assets/substract.svg);
+  .secondary-divider {
+    width: 70%;
   }
 
-  .active .tab-title {
-    font-size: 30px;
-    font-weight: 600;
+  .accordion {
+    flex-direction: row;
+    width: 80%;
+    height: 420px;
+    overflow: scroll;
+  }
+
+  .tab {
+    justify-content: center;
+    height: 60px;
+  }
+
+  .tab-title {
+    margin-left: 0;
+    font-size: 20px;
+  }
+
+  .tab-icon {
+    display: none;
   }
 
   .active .accordion-card-body {
-    position: relative;
-    top: 0;
-    display: block;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
   }
 
   .accordion-img {
-    width: 100%;
-    margin-bottom: 20px;
+    width: 250px;
+    height: 300px;
+    margin-left: 20px;
   }
 
   .accordion-text {
     width: 100%;
-    padding: 20px 30px;
+    margin-right: 20px;
   }
 
-  .accordion-card-text {
-    margin-top: 20px;
-  }
-
-  .accordion-divider {
-    border: 1px solid #D1D2D3;
+  .code-link {
+    width: 400px;
   }
 }
