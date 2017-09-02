@@ -50,7 +50,7 @@ p {
   border: 1px solid #3F3244;
 }
 
-.accordion-banner {
+.banner {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,7 +62,7 @@ p {
   width: 100%;
 }
 
-.accordion-title {
+.banner-title {
   font-weight: 300;
 }
 
@@ -181,6 +181,41 @@ p {
   outline: none;
 }
 
+.flexible-cards {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 10px auto;
+  flex-wrap: wrap;
+}
+
+.flexible-card {
+  flex: 1;
+  min-width: 30%;
+  margin: 20px 0;
+}
+
+.flexible-card-header {
+  padding: 15px;
+  border: 1px solid #D1D2D3;
+  border-bottom: none;
+  font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.flexible-card-body {
+  width: 100%;
+  height: 250px;
+  border: 1px solid #D1D2D3;
+}
+
+.flexible-img {
+  width: 100%;
+  height: 100%;
+}
+
 @media screen and (min-width: 450px) {
   .header {
     flex-direction: row;
@@ -201,7 +236,7 @@ p {
     display: none;
   }
 
-  .accordion-banner {
+  .banner {
     flex-direction: row;
     margin: 50px 0 50px 50px;
   }
@@ -252,5 +287,26 @@ p {
 
   .code-link {
     width: 400px;
+  }
+
+  .flexible-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .flexible-card {
+    width: 30%;
+    max-width: 30%;
+    margin: 20px 10px;
+  }
+
+  .flexible-card-m {
+    width: 62%;
+    margin: 20px 10px;
+  }
+
+  .flexible-card-l {
+    width: 100%;
+    margin: 20px 10px;
   }
 }
