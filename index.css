@@ -216,6 +216,75 @@ p {
   height: 100%;
 }
 
+
+.header-component {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  height: 70px;
+  margin: 50px auto 500px;
+  background-color: #AAAAAA;
+}
+
+.header-logo {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+  background-color: #D1D2D3;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  background-color: transparent;
+  border: none;
+  color: #4E4E4E;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.nav {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  z-index: -1;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-top: 30px;
+  background-color: #D1D2D3;
+  transition: all 0.2s;
+}
+
+.nav-active .nav {
+  display: flex; 
+}
+
+.nav-link {
+  margin: 15px 20px;
+  color: #4E4E4E;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.search {
+  background-color: #F2F2F2;
+  border: 1px solid #666666;
+  width: 90%;
+  height: 40px;
+  margin: 0 auto 10px;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+
 @media screen and (min-width: 450px) {
   .header {
     flex-direction: row;
@@ -296,7 +365,7 @@ p {
 
   .flexible-card {
     width: 30%;
-    max-width: 30%;
+    max-width: 50%;
     margin: 20px 10px;
   }
 
@@ -308,5 +377,40 @@ p {
   .flexible-card-l {
     width: 100%;
     margin: 20px 10px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .nav {
+    position: relative;
+    top: 0;
+    z-index: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    height: 50px;
+    padding-top: 0px;
+    background-color: transparent;
+    margin-top: 0px;
+  }
+
+  .nav-link {
+    margin: 15px 20px;
+    color: #4E4E4E;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  .search {
+    background-color: #F2F2F2;
+    border: 1px solid #666666;
+    width: 300px;
+    height: 40px;
+    margin: 0 auto 10px;
+    padding: 15px 5px;
+    font-size: 20px;
   }
 }

@@ -5,3 +5,7 @@ $('.accordion').on('click', function(e) {
   }
   $(e.target).parent().toggleClass('active');
 })
+
+$('.menu').on('click', function(e) {
+  $('.header-component').toggleClass('nav-active');
+});
